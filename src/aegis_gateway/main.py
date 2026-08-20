@@ -10,9 +10,9 @@ settings = get_settings()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info(f"🛡️  Starting {settings.APP_NAME} in [{settings.APP_ENV}] mode...")
+    logger.info(f"Starting {settings.APP_NAME} in [{settings.APP_ENV}] mode...")
     yield
-    logger.info(f"🛑 Shutting down {settings.APP_NAME}...")
+    logger.info(f"Shutting down {settings.APP_NAME}...")
 
 
 def create_app() -> FastAPI:
