@@ -1,6 +1,5 @@
 import pytest
 
-
 @pytest.mark.asyncio
 async def test_healthcheck_endpoint(async_client):
     response = await async_client.get("/v1/health")
