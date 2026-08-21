@@ -101,3 +101,27 @@ class LLMResponse(BaseModel):
     is_fallback: bool = False
     fallback_reason: Optional[str] = None
     finish_reason: Optional[str] = "stop"
+
+# Modèles Egress & Réponse Finale
+class EgressSecurityReport(BaseModel):
+    is_safe: bool
+    violation_reason: Optional[str] = None
+    leaks_detected: List[str] = Field(default_factory=list)
+    demasked_entities_count: int = 0
+
+
+class GatewayResponse(BaseModel):
+    content: str
+    provider: LLMProvider
+    model: str
+    input_tokens: int
+    output_tokens: int
+    total_tokens: int
+    cost_usd: float
+    baseline_cost_usd: float
+    savings_usd: float
+    latency_ms: float
+    is_fallback: bool
+    fallback_reason: Optional[str] = None
+    pii_anonymized: bool
+    egress_security: EgressSecurityReport
