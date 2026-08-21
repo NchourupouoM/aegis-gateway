@@ -276,7 +276,7 @@ uv run python scripts/seed_and_benchmark.py
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
@@ -284,5 +284,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Developed with passion by **Nchourupouo Mohamed** – AI Engineer.
 
-- **LinkedIn**: [linkedin.com/in/your-profile](https://www.linkedin.com/in/mohamed-nchourupouo-9530a6279)
+- **LinkedIn**: [linkedin.com/NchourupouoM](https://www.linkedin.com/in/mohamed-nchourupouo-9530a6279)
 - **GitHub**: [github.com/NchourupouoM](https://github.com/NchourupouoM)
