@@ -284,5 +284,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Developed with passion by **Nchourupouo Mohamed** – AI Engineer.
 
-- **LinkedIn**: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
+- **LinkedIn**: [linkedin.com/in/your-profile](https://www.linkedin.com/in/mohamed-nchourupouo-9530a6279)
+- **GitHub**: [github.com/NchourupouoM](https://github.com/NchourupouoM)
