@@ -54,3 +54,28 @@ class IngressSecurityReport(BaseModel):
     injection_result: InjectionScanResult
     pii_result: PIIMaskingResult
     processed_messages: List[ChatMessage]
+
+# Modèles FinOps & Smart Routing
+class LLMProvider(str, Enum):
+    OPENAI = "openai"
+    GEMINI = "gemini"
+
+
+class ModelTier(str, Enum):
+    FAST = "fast"  # Ex: Gemini 2.0 Flash / GPT-4o-mini
+    DEEP_REASONING = "deep_reasoning"  # Ex: GPT-4o
+    AUTO = "auto"  # Décision par le Smart Router
+
+
+class RoutingDecision(BaseModel):
+    selected_provider: LLMProvider
+    selected_model: str
+    fallback_provider: LLMProvider
+    fallback_model: str
+    estimated_input_tokens: int
+    complexity_score: float = Field(..., ge=0.0, le=1.0)
+    routing_reason: str
+    tier: ModelTier
+    estimated_input_cost_usd: float
+    baseline_cost_usd: float  # Coût si la requête avait été traitée par GPT-4o
+    estimated_savings_usd: float  # baseline_cost_usd - estimated_input_cost_usd
