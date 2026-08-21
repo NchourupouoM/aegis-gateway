@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from aegis_gateway.api.v1.analytics import router as analytics_router
 from aegis_gateway.api.v1.chat import router as chat_router
 from aegis_gateway.api.v1.health import router as health_router
+from aegis_gateway.api.v1.ui import router as ui_router
 from aegis_gateway.core.config import get_settings
 from aegis_gateway.core.logger import logger
 from aegis_gateway.observability.database import init_db
@@ -40,6 +41,7 @@ def create_app() -> FastAPI:
     app.include_router(health_router)
     app.include_router(chat_router)
     app.include_router(analytics_router)
+    app.include_router(ui_router)
 
     return app
 
