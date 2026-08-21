@@ -79,3 +79,25 @@ class RoutingDecision(BaseModel):
     estimated_input_cost_usd: float
     baseline_cost_usd: float  # Coût si la requête avait été traitée par GPT-4o
     estimated_savings_usd: float  # baseline_cost_usd - estimated_input_cost_usd
+
+
+# Modèles d'Exécution & Résilience
+class CircuitState(str, Enum):
+    CLOSED = "closed"  # Fonctionnement normal
+    OPEN = "open"  # En panne : basculement direct vers fallback
+    HALF_OPEN = "half_open"  # Test de reprise du service
+
+
+class LLMResponse(BaseModel):
+    content: str
+    provider_used: LLMProvider
+    model_used: str
+    input_tokens: int
+    output_tokens: int
+    total_cost_usd: float
+    baseline_cost_usd: float
+    savings_usd: float
+    latency_ms: float
+    is_fallback: bool = False
+    fallback_reason: Optional[str] = None
+    finish_reason: Optional[str] = "stop"
